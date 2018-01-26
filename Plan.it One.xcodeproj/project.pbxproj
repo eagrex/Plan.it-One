@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ECA876512019831F00384C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA876502019831F00384C39 /* AppDelegate.swift */; };
-		ECA876532019831F00384C39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA876522019831F00384C39 /* ViewController.swift */; };
+		ECA876532019831F00384C39 /* PlanitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA876522019831F00384C39 /* PlanitViewController.swift */; };
 		ECA876562019831F00384C39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA876542019831F00384C39 /* Main.storyboard */; };
 		ECA876582019831F00384C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA876572019831F00384C39 /* Assets.xcassets */; };
 		ECA8765B2019831F00384C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA876592019831F00384C39 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		ECA8764D2019831F00384C39 /* Plan.it One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plan.it One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA876502019831F00384C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECA876522019831F00384C39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECA876522019831F00384C39 /* PlanitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitViewController.swift; sourceTree = "<group>"; };
 		ECA876552019831F00384C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECA876572019831F00384C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA8765A2019831F00384C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				ECA876502019831F00384C39 /* AppDelegate.swift */,
-				ECA876522019831F00384C39 /* ViewController.swift */,
+				ECA876522019831F00384C39 /* PlanitViewController.swift */,
 				ECA876542019831F00384C39 /* Main.storyboard */,
 				ECA876572019831F00384C39 /* Assets.xcassets */,
 				ECA876592019831F00384C39 /* LaunchScreen.storyboard */,
@@ -136,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA876532019831F00384C39 /* ViewController.swift in Sources */,
+				ECA876532019831F00384C39 /* PlanitViewController.swift in Sources */,
 				ECA876512019831F00384C39 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
