@@ -12,9 +12,14 @@ class PlanitViewController: UITableViewController {
 
     var itemArray = ["Find Mike", "Buy Eggs", "Destroy Demon"]
     
+    var defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let items = defaults.array(forKey: "PlanitListArray") as? [String] {
+            itemArray = items
+        }
 
     }
 
@@ -58,6 +63,8 @@ class PlanitViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
             self.itemArray.append(textField.text!)
+            
+            self.defaults.setValue(self.itemArray, forKey: "PlanitListArray")
             
             self.tableView.reloadData()
         }
