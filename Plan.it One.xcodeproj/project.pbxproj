@@ -12,6 +12,7 @@
 		ECA876562019831F00384C39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA876542019831F00384C39 /* Main.storyboard */; };
 		ECA876582019831F00384C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA876572019831F00384C39 /* Assets.xcassets */; };
 		ECA8765B2019831F00384C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA876592019831F00384C39 /* LaunchScreen.storyboard */; };
+		ECA87663201C35D400384C39 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA87662201C35D400384C39 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		ECA876572019831F00384C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA8765A2019831F00384C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA8765C2019831F00384C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECA87662201C35D400384C39 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,46 @@
 			isa = PBXGroup;
 			children = (
 				ECA876502019831F00384C39 /* AppDelegate.swift */,
-				ECA876522019831F00384C39 /* PlanitViewController.swift */,
-				ECA876542019831F00384C39 /* Main.storyboard */,
-				ECA876572019831F00384C39 /* Assets.xcassets */,
-				ECA876592019831F00384C39 /* LaunchScreen.storyboard */,
+				ECA87665201C35E300384C39 /* Controllers */,
+				ECA87664201C35D800384C39 /* Data Model */,
+				ECA87666201C361800384C39 /* View */,
+				ECA87667201C362F00384C39 /* Supporting Files */,
 				ECA8765C2019831F00384C39 /* Info.plist */,
 			);
 			path = "Plan.it One";
+			sourceTree = "<group>";
+		};
+		ECA87664201C35D800384C39 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECA87662201C35D400384C39 /* Item.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		ECA87665201C35E300384C39 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECA876522019831F00384C39 /* PlanitViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ECA87666201C361800384C39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECA876542019831F00384C39 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECA87667201C362F00384C39 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECA876572019831F00384C39 /* Assets.xcassets */,
+				ECA876592019831F00384C39 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECA876532019831F00384C39 /* PlanitViewController.swift in Sources */,
+				ECA87663201C35D400384C39 /* Item.swift in Sources */,
 				ECA876512019831F00384C39 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
