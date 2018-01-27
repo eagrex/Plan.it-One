@@ -12,26 +12,12 @@ class PlanitViewController: UITableViewController {
 
     var itemArray = [Item]()
     
-    let defaults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newItem = Item()
-        newItem.title = "Find Mike"
-        itemArray.append(newItem)
-        
-        let newItem2 = Item()
-        newItem2.title = "Save Him"
-        itemArray.append(newItem2)
-        
-        let newItem3 = Item()
-        newItem3.title = "Kill Him"
-        itemArray.append(newItem3)
-        
-        if let items = defaults.array(forKey: "PlanitListArray") as? [Item] {
-            itemArray = items
-        }
+        loadItems()
 
     }
 
@@ -60,7 +46,7 @@ class PlanitViewController: UITableViewController {
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
-        tableView.reloadData()
+        saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -80,9 +66,18 @@ class PlanitViewController: UITableViewController {
             
             self.itemArray.append(newItem)
             
-            self.defaults.setValue(self.itemArray, forKey: "PlanitListArray")
+            let encoder = PropertyListEncoder()
+            
+            do {
+            let data = try encoder.encode(self.itemArray)
+                try data.write(to: self.dataFilePath!)
+            } catch {
+                print("Error encoding itemArray, \(error)")
+            }
             
             self.tableView.reloadData()
+            
+            self.saveItems()
         }
         
         alert.addTextField { (alertTextfield) in
@@ -96,7 +91,31 @@ class PlanitViewController: UITableViewController {
         
     }
     
+    //MARK - Model Manipulation Methods
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding itemArray, \(error)")
+        }
+        
+        self.tableView.reloadData()
+    }
     
+    func loadItems() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+            itemArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("Error decoding array, \(error)")
+            }
+        }
+        
+    }
     
 }
 
