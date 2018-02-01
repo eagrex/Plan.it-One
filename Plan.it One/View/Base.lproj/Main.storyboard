@@ -10,6 +10,45 @@
     </dependencies>
     <scenes>
         <!--Plan.it-->
+        <scene sceneID="jCG-Cd-xR2">
+            <objects>
+                <tableViewController id="fkn-qh-cf0" customClass="CategoryTableViewController" customModule="Plan_it_One" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NIa-Vy-ndC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="fLs-Va-Zz3">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fLs-Va-Zz3" id="RcD-Fm-xAy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fkn-qh-cf0" id="DZK-0N-nBw"/>
+                            <outlet property="delegate" destination="fkn-qh-cf0" id="wdA-Yc-qeu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Plan.it" id="5RF-wa-o4c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BWa-ZY-f8J">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="fkn-qh-cf0" id="kf9-u1-FGJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="aQP-Kf-J0F" kind="show" identifier="goToItems" id="l5O-le-JOw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EGq-Tn-TXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="117"/>
+        </scene>
+        <!--Items-->
         <scene sceneID="doP-6n-bBL">
             <objects>
                 <tableViewController id="aQP-Kf-J0F" customClass="PlanitViewController" customModule="Plan_it_One" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,9 +56,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="pVa-hC-rKO">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="aQP-Kf-J0F" id="RWu-Uq-Fcw"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanitItemCell" id="EsV-fh-xtF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsV-fh-xtF" id="pTN-GY-F4P">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -32,7 +79,7 @@
                             <outlet property="delegate" destination="aQP-Kf-J0F" id="e5d-4T-tnG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Plan.it" id="Ah8-ID-1LA">
+                    <navigationItem key="navigationItem" title="Items" id="Ah8-ID-1LA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WOM-GE-0DE">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -60,12 +107,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aQP-Kf-J0F" kind="relationship" relationship="rootViewController" id="heg-gp-W7x"/>
+                        <segue destination="fkn-qh-cf0" kind="relationship" relationship="rootViewController" id="yT4-Mi-SBV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnE-CY-rgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343" y="117"/>
+            <point key="canvasLocation" x="-306" y="117"/>
         </scene>
     </scenes>
 </document>
